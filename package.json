@@ -1,0 +1,12 @@
+{
+  "name": "dd-cooper-adams-webapp",
+  "version": "1.0.0",
+  "description": "Website Development for Cooper Adams LLC",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

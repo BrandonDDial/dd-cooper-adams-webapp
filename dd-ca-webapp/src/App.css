@@ -1,0 +1,27 @@
+/* FILE: src/App.css */
+
+@import './styles/colors.css';
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.app {
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  color: var(--header-color);
+}
+
+.header p {
+  color: var(--subheader-color);
+}
