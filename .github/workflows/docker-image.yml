@@ -19,15 +19,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build Docker image
+        id: build
+        run: |
+          docker build -t my-image-name:latest .
+          echo "::set-output name=image_id::$(docker images -q dd-cooper-adams-webapp:latest)"
 
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/cooper-adams-llc:latest
+      - name: Output image ID
+        run: echo "Docker Image ID: ${{ steps.build.outputs.image_id }}"
