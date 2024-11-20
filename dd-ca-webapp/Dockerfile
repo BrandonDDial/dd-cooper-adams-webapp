@@ -15,10 +15,6 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
-# Load environment variables
-RUN echo "DOCKER_USERNAME=${DOCKER_USERNAME}" >> /etc/environment
-RUN echo "DOCKER_PASSWORD=${DOCKER_PASSWORD}" >> /etc/environment
-
 # Build the application
 RUN npm run build
 
