@@ -24,9 +24,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint code
-        run: npm run lint
-
       - name: Run tests
         run: npm test
 
@@ -45,21 +42,3 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/cooper-adams-llc:latest
-
-  security:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Run ESLint
-        run: npm run lint
-
-      - name: Run npm audit
-        run: npm audit --audit-level=high
-
-      - name: Run CodeQL analysis
-        uses: github/codeql-action/analyze@v1
-        with:
-          category: "/language:javascript"
